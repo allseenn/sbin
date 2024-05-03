@@ -1,0 +1,12 @@
+alias VIDEO='cd /mnt/backup/video' # переходим в папку video
+alias CODDING='cd /mnt/backup/video/CODDING' # переходим в папку video
+alias IOT='cd /mnt/backup/video/CODDING/IOT' # переNavig в папку IOT
+alias FRONT='cd /mnt/backup/video/CODDING/FRONT' # переNavig в папку FRONT
+alias HTML='cd /mnt/backup/video/CODDING/FRONT/html' # переNavig в папку FRONT
+alias html='cd /mnt/backup/github/html' # переNavig в папку FRONT
+alias JAVA='cd /mnt/backup/video/CODDING/JAVA' # переNavig в папку FRONT
+alias github='cd /mnt/backup/github' # переходим в папку github
+alias DS='cd /mnt/backup/video/AI/DS' # переходим в папку video
+alias ds='cd /mnt/backup/github/ds' # переходим в папку github
+alias AI='cd /mnt/backup/video/AI' # переходим в папку video
+alias c2='cd /mnt/backup/github/c2' # переходим в папку video
