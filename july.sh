@@ -2,7 +2,7 @@
 # script controls jupiter $TYPE server installed to virtual environment in directory VENV
 VENV=/opt/lab/env
 # NDIR - its working dir place where you $TYPEs *.ipynb files stores. 
-NDIR=/mnt/wd/github
+NDIR=/mnt/backup/github
 # 0.0.0.0 start to listen any available net interface 
 IP=0.0.0.0
 # default port 8888

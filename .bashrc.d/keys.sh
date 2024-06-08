@@ -1,2 +1,2 @@
-xmodmap -e "keycode 135 = Alt_R"
+# xmodmap -e "keycode 135 = Alt_R"
 

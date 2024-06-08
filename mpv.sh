@@ -1,5 +1,8 @@
 #!/bin/bash
+
 SEC=1
+SPEED=0.1
+
 if [[ $1 == "--help" || $1 == "-h" || $1 == "" ]]; then
     echo "usage: mpv.sh -fucnps [FILENAME | URL]"
     echo "-f FILENAME: plays FILENAME"
@@ -7,7 +10,11 @@ if [[ $1 == "--help" || $1 == "-h" || $1 == "" ]]; then
     echo "-p: plays or pause the current file"
     echo "-n: rewind 5 seconds forward"
     echo "-b: rewind 5 seconds backward"
-    echo "-s: screen toggle to/from fullscreen"
+    echo "-t: screen toggle to/from fullscreen"
+    echo "-vu: volume up"
+    echo "-vd: volume down"
+    echo "-su: speed up"
+    echo "-sd: slow down"
     echo "-q: quit mpv"
     exit
 elif [[ $1 == "--file" || $1 == "-f" ]]; then
@@ -21,9 +28,17 @@ elif [[ $1 == "--next" || $1 == "-n" ]]; then
     echo "{ \"command\": [\"seek\", $SEC] }" | socat - /tmp/mpvsocket
 elif [[ $1 == "--prev" || $1 == "-b" ]]; then
     echo "{ \"command\": [\"seek\", -$SEC] }" | socat - /tmp/mpvsocket
-elif [[ $1 == "--screen" || $1 == "-s" ]]; then
+elif [[ $1 == "--speed-up" || $1 == "-su" ]]; then
+    echo "{ \"command\": [ \"add\", \"speed\", $SPEED ] }" | socat - /tmp/mpvsocket
+elif [[ $1 == "--speed-down" || $1 == "-sd" ]]; then
+    echo "{ \"command\": [ \"add\", \"speed\", -$SPEED ] }" | socat - /tmp/mpvsocket
+elif [[ $1 == "--toggle-screen" || $1 == "-t" ]]; then
     echo '{ "command": ["cycle", "fullscreen"] }' | socat - /tmp/mpvsocket
 elif [[ $1 == "--play" || $1 == "-p" ]]; then
     echo '{ "command": ["cycle", "pause"] }' | socat - /tmp/mpvsocket
+elif [[ $1 == "--volume-up" || $1 == "-vu" ]]; then
+  echo '{ "command": ["add", "volume", 5 ] }' | socat - /tmp/mpvsocket
+elif [[ $1 == "--volume-down" || $1 == "-vd" ]]; then
+  echo '{ "command": ["add", "volume", -5 ] }' | socat - /tmp/mpvsocket
 fi
 
