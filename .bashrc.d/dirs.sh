@@ -6,6 +6,7 @@ alias HTML='cd /mnt/backup/video/CODDING/FRONT/html' # переNavig в папк
 alias html='cd /mnt/backup/github/html' # переNavig в папку FRONT
 alias JAVA='cd /mnt/backup/video/CODDING/JAVA' # переNavig в папку FRONT
 alias github='cd /mnt/backup/github' # переходим в папку github
+alias ubuntu='cd /mnt/backup/github/ubuntu' # переходим в папку github
 alias DS='cd /mnt/backup/video/AI/DS' # переходим в папку video
 alias ds='cd /mnt/backup/github/ds' # переходим в папку github
 alias AI='cd /mnt/backup/video/AI' # переходим в папку video
