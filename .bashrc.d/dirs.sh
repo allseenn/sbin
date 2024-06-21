@@ -19,4 +19,8 @@ alias CIOT='cd /mnt/backup/video/CODDING/IOT/ciot' # переходим в па�
 alias dslibs='cd /mnt/backup/github/dslibs' # переходим в папку video
 alias DSLIBS='cd /mnt/backup/video/AI/dslibs' # переходим в папку video
 alias ubuntu='cd /mnt/backup/github/ubuntu' # переNavig в папку github
+alias js='cd /mnt/backup/github/js' # переNavig в папку github
+alias JS='cd /mnt/backup/video/CODDING/FRONT/JS' # переNavig в папку FRONT
 alias Downloads='cd /mnt/backup/Downloads' #  в папку Загрузки
+alias sbin='cd /usr/local/sbin' #  в папку sbin
+
