@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+entry {
+    min-width: 20px; /* Измените это значение на желаемую ширину */
+    font-size: 12px;
+}
+
+button {
+    min-width: 20px;
+    font-size: 16px;
+}
+
+
+label {
+    min-width: 20px;
+    font-size: 16px;
+}
+
