@@ -29,3 +29,5 @@ alias Downloads='cd /mnt/backup/Downloads' #  в папку Загрузки
 alias sbin='cd /usr/local/sbin' #  в папку sbin
 alias MATAN='cd /mnt/backup/video/AI/Matan/' # переходим в папку video
 alias matan='cd /mnt/backup/github/matan' # переходим в папку video
+alias algo='cd /mnt/backup/github/algo' # переходим в папку video
+alias ALGO='cd /mnt/backup/video/DS/algo' # переходим в папку video
