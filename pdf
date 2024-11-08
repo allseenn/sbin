@@ -12,7 +12,8 @@ WATER "Добавить водяной знак" \
 TRANS "Сделать фон прозрачным - на выходе PNG" \
 ALLPDF "Конвертировать любой файл(ы) в pdf файлы" \
 MERGE "Объединение файлов ПДФ в один" \
-ROTAT "Вращение фйала на заданный градус"`
+ROTAT "Вращение фйала на заданный градус" \
+CONVERT "Конвертировать файл в другой формат"`
 
 if [[ $OPERATION = RANGE ]]
 then
@@ -128,5 +129,12 @@ if [[ $OPERATION = ROTAT ]]
 then
 OUT=`zenity --file-selection --save --title="Название измененного файла?"`
 GRAD=`zenity --forms --title="Выбор градуса" --text="Градус вращения" --add-entry="90"`
-convert -rotate $GRAD $IN $OUT
+convert --rotate $GRAD $IN $OUT
+fi
+
+if [[ $OPERATION = CONVERT ]]
+then
+OUT=`zenity --file-selection --save --title="Название измененного файла?"`
+PROC=`zenity --forms --title="Выбор качества" --text="Процент качества" --add-entry="50"`
+convert --quality $PROC $IN $OUT
 fi
