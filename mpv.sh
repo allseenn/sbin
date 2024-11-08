@@ -18,10 +18,10 @@ if [[ $1 == "--help" || $1 == "-h" || $1 == "" ]]; then
     echo "-q: quit mpv"
     exit
 elif [[ $1 == "--file" || $1 == "-f" ]]; then
-    mpv --input-ipc-server=/tmp/mpvsocket --fullscreen $2
+    mpv --input-ipc-server=/tmp/mpvsocket --fullscreen "$2"
 elif [[ $1 == "--url" || $1 == "-u" ]]; then
     url=$(xsel)
-    mpv --input-ipc-server=/tmp/mpvsocket --fullscreen $url
+    mpv --input-ipc-server=/tmp/mpvsocket --fullscreen "$url"
 elif [[ $1 == "--quit" || $1 == "-q" ]]; then
     echo '{ "command": ["quit"] }' | socat - /tmp/mpvsocket
 elif [[ $1 == "--next" || $1 == "-n" ]]; then
