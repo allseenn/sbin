@@ -8,7 +8,7 @@ IP=0.0.0.0
 # default port 8888
 PORT=8888
 # select type of notebook or lab o server
-TYPE=notebook
+TYPE=lab
 # --no-browser Prevent the opening of the default url in the browser, you could use firefox or any installed
 BROWSER=--no-browser 
 # its tricking constuct that similar to ternary IF: ifs $1 is empy set CMD to h, its needed any string to avoid many warnings futher
@@ -17,7 +17,7 @@ CMD=${1:-h}
 if [ $CMD = start ]
 then
     source $VENV/bin/activate
-    $VENV/bin/jupyter $TYPE --ip=$IP --port=$PORT --$TYPE-dir=$NDIR --no-browser &
+    $VENV/bin/jupyter $TYPE --ip=$IP --port=$PORT --notebook-dir=$NDIR --no-browser &
 
 elif [ $CMD = stop ]
 then
@@ -30,7 +30,7 @@ then
     kill -9 $JNPID
     sleep 5
     source $VENV/bin/activate
-    $VENV/bin/jupyter $TYPE --ip=$IP --port=$PORT --$TYPE-dir=$NDIR $BROWSER &
+    $VENV/bin/jupyter $TYPE --ip=$IP --port=$PORT --notebook-dir=$NDIR $BROWSER &
 
 elif [ $CMD = status ]
 then
