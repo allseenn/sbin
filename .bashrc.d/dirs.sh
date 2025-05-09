@@ -46,3 +46,5 @@ alias base.php='cd /mnt/backup/github/base.php' # переходим в папк
 alias itreact='cd /mnt/backup/github/itreact' # переходим в папку video
 alias lureact='cd /mnt/backup/github/lureact' # переходим в папку video
 alias itshop='cd /mnt/backup/github/itshop' # переходим в папку video
+alias focus='cd /mnt/backup/focus' # переходим в папку video
+alias fastapi='cd /mnt/backup/github/fastapi' # переходим в папку video
