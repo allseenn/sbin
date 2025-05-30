@@ -45,4 +45,5 @@ for ((i=0; i<output_count; i++)); do
     
     ffmpeg -i "$input_file" -ss "$start_time" -t "$segment_duration_time" -c copy "${output_file_base}_$((i + 1)).$input_extension"
 done
+rm -rf "$input_file"
 zenity --info --text="$1 разделен на $output_count частей с перекрытием по $overlap секунды"

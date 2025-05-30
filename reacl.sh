@@ -56,4 +56,4 @@ function App() {
 export default App;
 EOF
 
-mkdir ./src/components
+mkdir ./src/components ./src/reducers ./src/actions ./src/store
