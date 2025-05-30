@@ -1,5 +1,5 @@
 #!/bin/bash
-# Получение ссылки из буфера обмена с помощью xclip
+# Получение ссылки из буфера обмена с помощью xsel
 log=wget-$(date +%Y%m%d%H%M%S)
 download_link=$(xsel --clipboard --output)
 # Проверка, что буфер обмена не пустой
