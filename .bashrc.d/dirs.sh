@@ -53,4 +53,5 @@ alias REACTM='cd "/mnt/backup/video/STEPIK/React - Полное руководс
 alias cicd='cd /mnt/backup/gitlab/cicd' # переNavig в папку в гитлабе CICD
 alias gitlab='cd /mnt/backup/gitlab/' # переNavig в папку в гитлабе CICD
 alias focus='cd /mnt/backup/focus' # переходим в папку video
-alias fastapi='cd /mnt/backup/github/fastapi' # переходим в папку video
+alias FastAPI='cd /mnt/backup/github/fastapi' # переходим в папку video
+alias webserial='cd /mnt/backup/github/webserial' # переходим в папку video

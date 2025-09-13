@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DISPLAY_NUM=${1:-0}
-VIDEO_OUTPUT="/mnt/backup/video/screen_record_$(date +%Y%m%d_%H%M%S).mkv"
+VIDEO_OUTPUT="/mnt/backup/video/screen_record_$(date +%Y%m%d_%H%M%S).mp4"
 
 # Устройства аудио
 SYS_AUDIO="bluez_output.74_2A_8A_14_B3_32.1.monitor"
