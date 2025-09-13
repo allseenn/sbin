@@ -62,4 +62,4 @@ alias gitlab-profile='cd /mnt/backup/focus/gitlab-profile' # переходим 
 alias webserial='cd /mnt/backup/github/webserial' # переходим в папку video
 alias eloquent='cd /mnt/backup/github/eloquent' # переходим в папку video
 alias graph='cd /mnt/backup/github/graph' # переходим в папку video
-alias yt-dlp='cd /mnt/backup/github/yt-dlp' # переходим в папку video
+alias ytdlp='cd /mnt/backup/github/yt-dlp' # переходим в папку video

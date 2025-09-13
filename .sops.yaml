@@ -1,0 +1,17 @@
+# 1. slava lin
+# 2. slava win
+# 3. polina
+# 3. ci-cd 1
+# 4. ci-cd 2
+# 5. ci-cd 3
+creation_rules:
+  - path_regex: \.(env|env\.enc)$  
+    age: >-
+      age18qxsdc2cg390cudnaf9h7njcx2kcqjte07vfs37dy6xldp7f3v8qgmvqrk, 
+      age1dfptqgyefhqjjednnjs5szfafzmk0hs23u85g6h7n2uajgtae3lquhkzs7,
+      age1jwjfap3htg9cnrfh6jx7f3j0cefwseqcuxw7d8xlmlpgk83lx9hq6g06kz,
+      age183pl6hdtvkv67pltmcqgtqputtpgxcea3q5pxc9yn4gxc32zcgkqu6amuj,
+      age1q6y6k0exac7w82nl67wvjfzq5fayc0rsem0j9e9mgc76gaeguuaqt5nqff,
+      age1966l47hntmzyw8tudxhxgt0kaf3a7x84x28nw3mjfhwkts9jfgrqkcc5lf 
+    input_type: dotenv
+    output_type: dotenv
