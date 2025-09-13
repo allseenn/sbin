@@ -1,4 +1,5 @@
 #!/bin/bash
+# apt install ghostscript imagemagick zenity
 IN=$*
 DATE=`date +%Y%m%d`
 OPERATION=`zenity --list --title="Работа с ПДФ" --text="Выберите работу" --column="Работа" --column="Описание" --width=470 --height=420 \
