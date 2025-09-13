@@ -1,5 +1,6 @@
 #!/bin/bash
 # Получение ссылки из буфера обмена с помощью xsel
+# apt install xsel
 log=wget-$(date +%Y%m%d%H%M%S)
 download_link=$(xsel --clipboard --output)
 # Проверка, что буфер обмена не пустой
