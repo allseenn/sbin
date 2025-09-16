@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-
 DATA=RED
 SAVE=WD
 DISK=`blkid --label $DATA`

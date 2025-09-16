@@ -1,5 +1,5 @@
 #!/bin/bash
-# script controls balance and spends some mony to avoid bolocking sim-card
+# script controls balance and spends some mony to avoid blocking sim-card
 HOST=$1
 DONGLE=$2
 ACTION=$3
