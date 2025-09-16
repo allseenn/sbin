@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $1 == "-h" ]; then
+if [ -z $1 ] || [ $1 == "-h" ]; then
     echo "Script for encrypting and decrypting .env using sops utility"
     echo "Usage: $0 -[e|d]" 
     echo "-h: print this help"
