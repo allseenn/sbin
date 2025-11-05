@@ -8,7 +8,6 @@ alias p='/usr/bin/python'
 alias wsgi='flask run --debug --host 0.0.0.0 --port 5500'
 alias venv='source venv/bin/activate'
 alias git='LANG=en_US.UTF-8 git'
-function gitclone() { git clone https://github.com/allseenn/$1 $2 ;}
 function sources() {
     . /usr/local/sbin/.bashrc.d/dirs.sh
     . /usr/local/sbin/.bashrc.d/apps.sh
