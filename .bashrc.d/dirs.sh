@@ -1,4 +1,5 @@
 alias VIDEO='cd /mnt/backup/video' # переходим в папку video
+alias mos='cd /mnt/backup/mos' # переходим в папку mos
 alias CODDING='cd /mnt/backup/video/CODDING' # переходим в папку video
 alias FRONT='cd /mnt/backup/video/FRONT' # переNavig в папку FRONT
 alias HTML='cd /mnt/backup/video/FRONT/html' # переNavig в папку FRONT
