@@ -16,7 +16,7 @@ if [ -n "$NEW" ]; then
     notify-send "Обновляем yt-dlp подождите..."
     pip install --upgrade yt-dlp
 fi
-yt-dlp --proxy http://192.168.1.1:8118 --cookies $COOKIES -o $DATE $LINK
+yt-dlp --proxy http://192.168.1.1:8118 --js-runtimes deno --remote-components ejs:github --cookies $COOKIES -o $DATE $LINK
 # ffmpeg -i $DATE.webm -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 128k -movflags +faststart $DATE.mp4
 mv $DATE $DATE.mp4
 notify-send "Скачан c youtube $DATE.mp4"
