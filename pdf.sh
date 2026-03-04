@@ -1,8 +1,8 @@
 #!/bin/bash
 # apt install ghostscript imagemagick zenity
 IN=$*
-DATE=`date +%Y%m%d`
-OPERATION=`zenity --list --title="Работа с ПДФ" --text="Выберите работу" --column="Работа" --column="Описание" --width=470 --height=420 \
+DATE=$(date +%Y%m%d)
+OPERATION=$(zenity --list --title="Работа с ПДФ" --text="Выберите работу" --column="Работа" --column="Описание" --width=470 --height=420 \
 RANGE "Извлечение диапазона страниц из ПДФ" \
 PAGES "Каждая страница ПДФ в отдельный файл" \
 SIZE "Изменение размера мегабайт ПДФ файла" \
@@ -14,47 +14,48 @@ TRANS "Сделать фон прозрачным - на выходе PNG" \
 ALLPDF "Конвертировать любой файл(ы) в pdf файлы" \
 MERGE "Объединение файлов ПДФ в один" \
 ROTAT "Вращение фйала на заданный градус" \
-CONVERT "Конвертировать файл в другой формат"`
+CLEAN "Очищает все страницы PDF, EPUB от заданного текста" \
+CONVERT "Конвертировать файл в другой формат")
 
 if [[ $OPERATION = RANGE ]]
 then
-OUT=`zenity --file-selection --save --title="Название сохранненной части ПДФ файла?"`
-ZEN=`zenity --forms --title="Выбор страниц" --text="Выберети диапазон страниц" --separator=" " --add-entry="Начальная страница" --add-entry="Последняя страница"`
-FIRST=`echo $ZEN | awk '{print $1}'`
-LAST=`echo $ZEN | awk '{print $2}'`
+OUT=$(zenity --file-selection --save --title="Название сохранненной части ПДФ файла?")
+ZEN=$(zenity --forms --title="Выбор страниц" --text="Выберети диапазон страниц" --separator=" " --add-entry="Начальная страница" --add-entry="Последняя страница")
+FIRST=$(echo $ZEN | awk '{print $1}')
+LAST=$(echo $ZEN | awk '{print $2}')
 gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -dFirstPage=$FIRST -dLastPage=$LAST -sOutputFile=$OUT $IN
 fi
 
 if [[ $OPERATION = PAGES ]]
 then
-ZEN=`zenity --file-selection --save --title="Название сохранненной части ПДФ файла?"`
-OUT=`echo $ZEN | sed -e 's\.pdf\%d.pdf\g'`
+ZEN=$(zenity --file-selection --save --title="Название сохранненной части ПДФ файла?")
+OUT=$(echo $ZEN | sed -e 's\.pdf\%d.pdf\g')
 gs -sDEVICE=pdfwrite -dNOPAUSE -dBATCH -sOutputFile=$OUT $IN
 fi
 
 if [[ $OPERATION = SIZE ]]
 then
-OUT=`zenity --file-selection --save --title="Название уменьшенного ПДФ файла?"`
-SCALE=`zenity --list --radiolist --title="Размер уменьшенного ПДФ Файла?" --column="Выбор" --column="Степень" FALSE screen TRUE ebook FALSE printer FALSE prepress`
+OUT=$(zenity --file-selection --save --title="Название уменьшенного ПДФ файла?")
+SCALE=$(zenity --list --radiolist --title="Размер уменьшенного ПДФ Файла?" --column="Выбор" --column="Степень" FALSE screen TRUE ebook FALSE printer FALSE prepress)
 gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/$SCALE -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$OUT $IN
 fi
 
 if [[ $OPERATION = PIXEL_SIZE ]]
 then
-OUT=`zenity --file-selection --save --title="Название уменьшенного ПДФ файла?"`
-PIXEL=`zenity --forms --title="Выбор разрешения" --text="Выбор качества в пикселях" --add-entry="130"`
+OUT=$(zenity --file-selection --save --title="Название уменьшенного ПДФ файла?")
+PIXEL=$(zenity --forms --title="Выбор разрешения" --text="Выбор качества в пикселях" --add-entry="130")
 convert -density $PIXEL -quality 60 -compress jpeg $IN $OUT
 fi
 
 if [[ $OPERATION = BLACK ]]
 then
-OUT=`zenity --file-selection --save --title="Название черно-белого выходного ПДФ файла?"`
+OUT=$(zenity --file-selection --save --title="Название черно-белого выходного ПДФ файла?")
 gs -dNOPAUSE -q -sProcessColorModel=DeviceGray -sColorConversionStrategy=Gray -sDEVICE=pdfwrite -sOutputFile=$OUT $IN
 fi
 
 if [[ $OPERATION = IMAGE ]]
 then
-OUT=`zenity --file-selection --save --title="Название преобразованного в картинку ПДФ файла?"`
+OUT=$(zenity --file-selection --save --title="Название преобразованного в картинку ПДФ файла?")
 gs -dBATCH -dNOPAUSE -q -sDEVICE=jpeg -r300 -sOutputFile=/tmp/jpeg\%02d.jpg $IN
 convert /tmp/jpeg*.jpg $OUT
 rm /tmp/jpeg*.jpg
@@ -109,7 +110,7 @@ fi
 
 if [[ $OPERATION = TRANS ]]
 then
-OUT=`zenity --file-selection --save --title="Название прозрачного файла PNG?"`
+OUT=$(zenity --file-selection --save --title="Название прозрачного файла PNG?")
 gs -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r300 -sOutputFile=tmp.png $IN
 convert -colorspace GRAY tmp.png $OUT.png
 rm tmp.png
@@ -122,20 +123,29 @@ fi
 
 if [[ $OPERATION = MERGE ]]
 then
-OUT=`zenity --file-selection --save --title="Название объединенного ПДФ файла?"`
+OUT=$(zenity --file-selection --save --title="Название объединенного ПДФ файла?")
 gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=$OUT $IN
 fi
 
 if [[ $OPERATION = ROTAT ]]
 then
-OUT=`zenity --file-selection --save --title="Название измененного файла?"`
-GRAD=`zenity --forms --title="Выбор градуса" --text="Градус вращения" --add-entry="90"`
+OUT=$(zenity --file-selection --save --title="Название измененного файла?")
+GRAD=$(zenity --forms --title="Выбор градуса" --text="Градус вращения" --add-entry="90")
 convert --rotate $GRAD $IN $OUT
+fi
+
+if [[ $OPERATION = CLEAN ]]
+then
+SCRIPT_DIR=/mnt/backup/github/pdf/
+TEXT=$(zenity --entry --title="Текст для удаления" --text="Введите текст, который нужно удалить из файла:")
+OUT=$(zenity --file-selection --save --title="Название измененного файла?")
+cd $SCRIPT_DIR || exit
+uv run python main.py $IN $TEXT $OUT
 fi
 
 if [[ $OPERATION = CONVERT ]]
 then
-OUT=`zenity --file-selection --save --title="Название измененного файла?"`
-PROC=`zenity --forms --title="Выбор качества" --text="Процент качества" --add-entry="50"`
+OUT=$(zenity --file-selection --save --title="Название измененного файла?")
+PROC=$(zenity --forms --title="Выбор качества" --text="Процент качества" --add-entry="50")
 convert --quality $PROC $IN $OUT
 fi

@@ -4,7 +4,7 @@
 # OR
 # apt instll mpv zenity
 . $(dirname $0)/.env
-. $VENV/bin/activate
+. $DIR_YT/.venv/bin/activate
 DATE=$(date +%Y%m%d%H%M%S)
 LINK=$(xsel --clipboard --output)
 if [ -z "$LINK" ]; then
