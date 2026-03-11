@@ -68,4 +68,4 @@ alias frontend='cd /mnt/backup/focus/frontend' # переходим в папк�
 alias admin='cd /mnt/backup/github/admin' # переходим в папку admin
 alias onedrive='cd /mnt/backup/cloud/allseen'
 alias mos='cd /mnt/backup/mos'
-alias shur 'cd /mnt/backup/mos/shur'
+alias shur='cd /mnt/backup/mos/shur'
