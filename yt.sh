@@ -1,22 +1,11 @@
-#!/bin/bash
-# apt install xsel ffmpeg zenity 
-# pip install yt-dlp certifi Brotli websockets requests curl_cffi pycryptodomex phantomjs SecretStorage mutagen xattr
-# OR
-# apt instll mpv zenity
-. $(dirname $0)/.env
-. $DIR_YT/.venv/bin/activate
+#!/usr/bin/env bash
 DATE=$(date +%Y%m%d%H%M%S)
 LINK=$(xsel --clipboard --output)
 if [ -z "$LINK" ]; then
     zenity --error --text="Буфер обмена пуст. Ссылка для скачивания не найдена."
     exit 1
 fi
-NEW=$(pip list --outdated | grep yt-dlp)
-if [ -n "$NEW" ]; then
-    notify-send "Обновляем yt-dlp подождите..."
-    pip install --upgrade yt-dlp
-fi
-yt-dlp --proxy http://192.168.1.1:8118 --js-runtimes deno --remote-components ejs:github --cookies $COOKIES -o $DATE $LINK
-# ffmpeg -i $DATE.webm -c:v libx264 -crf 23 -preset fast -c:a aac -b:a 128k -movflags +faststart $DATE.mp4
-mv $DATE $DATE.mp4
-notify-send "Скачан c youtube $DATE.mp4"
+uv tool upgrade yt-dlp
+TITLE=$(yt-dlp --get-title $LINK)
+yt-dlp $LINK
+notify-send "Скачан $TITLE"
