@@ -69,3 +69,4 @@ alias admin='cd /mnt/backup/github/admin' # переходим в папку adm
 alias onedrive='cd /mnt/backup/cloud/allseen'
 alias mos='cd /mnt/backup/mos'
 alias shur='cd /mnt/backup/mos/shur'
+alias usb='cd /mnt/backup/github/usb' # переходим в папку usb
