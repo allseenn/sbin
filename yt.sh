@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash -l
+cd "$1"
+exec > >(tee -a $(basename $0).log) 2>&1
+set -euox pipefail
 DATE=$(date +%Y%m%d%H%M%S)
 LINK=$(xsel --clipboard --output)
 if [ -z "$LINK" ]; then
@@ -8,4 +11,5 @@ fi
 uv tool upgrade yt-dlp
 TITLE=$(yt-dlp --get-title $LINK)
 yt-dlp $LINK
-notify-send "Скачан $TITLE"
+status=$(pwd) 
+notify-send "$status Скачана $TITLE"
