@@ -1,6 +1,7 @@
 #!/bin/bash
 # Данный скрипт активирует боковую кнопку для открытия чата c агентом Gemini,
 # Меняет регион на US. Скрипт нужно запускать при выключенном Хроме.
+# Необходимо вручную выставить флаги: chrome://flags/ Glic - Enabled
 # После смены региона необходимо пользоваться VPN или Proxy, Socks
 JSON_FILE="$HOME/.config/google-chrome/Local State"
 BACKUP_FILE="$HOME/.config/google-chrome/Local State.bak"
