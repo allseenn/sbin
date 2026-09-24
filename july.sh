@@ -2,7 +2,7 @@
 # script controls jupiter $TYPE server installed to virtual environment in directory VENV
 VENV=/opt/lab/env
 # NDIR - its working dir place where you $TYPEs *.ipynb files stores. 
-NDIR=/mnt/backup/github
+NDIR=/mnt/sdcard/github
 # 0.0.0.0 start to listen any available net interface 
 IP=0.0.0.0
 # default port 8888
@@ -11,7 +11,7 @@ PORT=8888
 TYPE=lab
 # --no-browser Prevent the opening of the default url in the browser, you could use firefox or any installed
 BROWSER=--no-browser 
-# its tricking constuct that similar to ternary IF: ifs $1 is empy set CMD to h, its needed any string to avoid many warnings futher
+# its tricking construct that similar to ternary IF: ifs $1 is empty set CMD to h, its needed any string to avoid many warnings further
 CMD=${1:-h}
 
 if [ $CMD = start ]

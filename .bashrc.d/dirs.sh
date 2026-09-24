@@ -72,3 +72,4 @@ alias usb='cd /mnt/sdcard/github/usb' # переходим в папку usb
 alias pythondive='cd /mnt/sdcard/github/pythondive' # переходим в папку pythondive
 alias myrepo='cd /mnt/backup/github/myrepo' # переходим в папку myrepo
 alias geometry='cd /mnt/sdcard/github/geometry' # переходим в папку geometry
+alias geometry.wiki='cd /mnt/sdcard/github/geometry.wiki' # переходим в папку geometry.wiki
