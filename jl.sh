@@ -19,7 +19,7 @@ make_venv() {
     # uv python install 3.12
     uv venv --python 3.14 --system-site-packages "$VENV"
     # uv venv --python $(which python) --system-site-packages "$VENV"
-    uv pip install --no-build psutil --python "$VENV/bin/python" jupyterlab numpy pandas matplotlib scipy codeium-jupyter
+    uv pip install --break-system-packages --no-build psutil --python "$VENV/bin/python" jupyterlab numpy pandas matplotlib scipy codeium-jupyter
 }
 
 ensure_venv() {
