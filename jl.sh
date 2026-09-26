@@ -16,8 +16,8 @@ CMD=${1:-h}
 
 make_venv() {
     mkdir -p "$(dirname "$VENV")"
-    uv python install 3.12
-    uv venv --python 3.12 "$VENV"
+    # uv python install 3.12
+    uv venv --python 3.14 "$VENV"
     uv pip install --python "$VENV/bin/python" jupyterlab numpy pandas matplotlib scipy codeium-jupyter
 }
 
