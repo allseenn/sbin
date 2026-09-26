@@ -1,6 +1,6 @@
-#!/bin/bash
-# script controls jupiter $TYPE server installed to virtual environment in directory VENV
-VENV=/opt/lab/.venv
+#!/usr/bin/env bash
+# script controls jupiter $TYPE server installed to virtual environment in directory VENV 
+VENV=${PREFIX:/}/opt/lab/.venv
 # NDIR - its working dir place where you $TYPEs *.ipynb files stores.
 NDIR=/mnt/sdcard/github
 # 0.0.0.0 start to listen any available net interface
