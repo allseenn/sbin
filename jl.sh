@@ -16,10 +16,20 @@ CMD=${1:-h}
 
 make_venv() {
     mkdir -p "$(dirname "$VENV")"
-    # uv python install 3.12
-    uv venv --python 3.14 --system-site-packages "$VENV"
-    # uv venv --python $(which python) --system-site-packages "$VENV"
-    uv pip install --only-binary psutil --python "$VENV/bin/python" jupyterlab numpy pandas matplotlib scipy codeium-jupyter
+
+    PYTHON314="${PYTHON314:-$(command -v python3.14 || command -v python3 || true)}"
+    if [ -z "$PYTHON314" ] || [ ! -x "$PYTHON314" ]; then
+        echo "Python 3.14 not found. Install it or set PYTHON314=/path/to/python3.14"
+        exit 1
+    fi
+
+    # Original uv-based setup:
+    # uv venv --python 3.14 --system-site-packages "$VENV"
+    # uv pip install --only-binary psutil --python "$VENV/bin/python" jupyterlab numpy pandas matplotlib scipy codeium-jupyter sympy
+
+    "$PYTHON314" -m venv --system-site-packages "$VENV"
+    "$VENV/bin/python" -m pip install --upgrade pip setuptools wheel
+    "$VENV/bin/python" -m pip install jupyterlab numpy pandas matplotlib scipy codeium-jupyter sympy
 }
 
 ensure_venv() {

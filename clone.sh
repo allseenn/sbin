@@ -75,6 +75,7 @@ case "$PROVIDER" in
 esac
 
 mkdir -p "$(dirname "$TARGET_DIR")"
+git config --global --add safe.directory "$TARGET_DIR"
 git clone "$URL" "$TARGET_DIR"
 
 echo "alias ${REPO}='cd ${TARGET_DIR}' # переходим в папку ${REPO}" >> /usr/local/sbin/.bashrc.d/dirs.sh
