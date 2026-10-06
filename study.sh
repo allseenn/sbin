@@ -9,6 +9,7 @@ echo "5. Probability"
 echo "6. Probability lab"
 echo "7. Physics"
 echo "8. Physics lab"
+echo "11. ACE (Associate Cloud Engineer)"
 
 read -p "Enter the number of your choice: " choice
 
@@ -44,6 +45,15 @@ case $choice in
     8)
         xdg-open /mnt/sdcard/cloud/allseen@yandex.ru/Физика/07.pdf
         code /mnt/sdcard/github/physics &
+        ;;
+
+    21)
+        ## ACE (Associate Cloud Engineer)
+        rm -f /home/slava/.config/google-chrome/Default/Sessions/*
+        google-chrome --new-window https://skills.google /mnt/sdcard/gitlab/gcnet/ace.wiki/home.md &
+        cd /mnt/sdcard/gitlab/gcnet/ace.wiki
+        git pull
+        code . &
         ;;
     *)
         echo "Invalid choice. Please run the script again and select a valid option."
