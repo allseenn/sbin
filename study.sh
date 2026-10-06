@@ -9,7 +9,7 @@ echo "5. Probability"
 echo "6. Probability lab"
 echo "7. Physics"
 echo "8. Physics lab"
-echo "11. ACE (Associate Cloud Engineer)"
+echo "21. ACE (Associate Cloud Engineer)"
 
 read -p "Enter the number of your choice: " choice
 
