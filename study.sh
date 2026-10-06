@@ -50,7 +50,7 @@ case $choice in
     21)
         ## ACE (Associate Cloud Engineer)
         rm -f /home/slava/.config/google-chrome/Default/Sessions/*
-        google-chrome --new-window https://skills.google /mnt/sdcard/gitlab/gcnet/ace.wiki/home.md &
+        google-chrome --variations-override-country=us --lang=en-US --new-window https://skills.google /mnt/sdcard/gitlab/gcnet/ace.wiki/home.md &
         cd /mnt/sdcard/gitlab/gcnet/ace.wiki
         git pull
         code . &
