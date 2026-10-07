@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 ROOT=/mnt/sdcard/cloud
-cd $ROOT || exit
+cd $ROOT 
 dirs=(*/)
 if (($#)); then
 	dir=${dirs[$1-1]}
 else
 	select dir in "${dirs[@]}"; do break; done
 fi
-cd -- "$dir" && exec bash
+cd -- "$dir" && bash
+echo $ROOT/$dir
+
