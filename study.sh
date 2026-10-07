@@ -29,7 +29,7 @@ case $choice in
         xdg-open $CLOUD_DIR/Алгебра/07.pdf
         algebra && code .
         rm -f $YANDEX_PROFILE/Sessions/*
-        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com /mnt/sdcard/github/algebra.wiki/Home.md &
+        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     3)
         xdg-open $CLOUD_DIR/Геометрия/07-09.pdf
@@ -47,7 +47,7 @@ case $choice in
         xdg-open $CLOUD_DIR/TерВер/07-09_1.pdf
         probability && code .
         rm -f $YANDEX_PROFILE/Sessions/*
-        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com /mnt/sdcard/github/probability.wiki/Home.md &
+        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     7)
         xdg-open $CLOUD_DIR/Физика/07.pdf
@@ -57,13 +57,13 @@ case $choice in
         xdg-open $CLOUD_DIR/Физика/07.pdf
         physics && code .
         rm -f $YANDEX_PROFILE/Sessions/*
-        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com /mnt/sdcard/github/physics.wiki/Home.md &
+        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     21)
         ## ACE (Associate Cloud Engineer)
-        rm -f $CHROME_PROFILE/Sessions/*
-        $CHROME_BIN --variations-override-country=us --lang=en-US --new-window https://skills.google /mnt/sdcard/gitlab/gcnet/ace.wiki/home.md &
         ace.wiki &&git pull && code .
+        rm -f $CHROME_PROFILE/Sessions/*
+        $CHROME_BIN --variations-override-country=us --lang=en-US --new-window https://skills.google $PWD/home.md &
         ;;
     *)
         echo "Invalid choice. Please run the script again and select a valid option."
