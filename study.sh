@@ -21,7 +21,7 @@ case $choice in
     2)
         xdg-open /mnt/sdcard/cloud/allseen@yandex.ru/Алгебра/07.pdf
         rm -f /home/slava/.config/google-chrome/Default/Sessions/*
-        google-chrome --variations-override-country=us --lang=en-US --new-window https://gemini.google.com /mnt/sdcard/github/algebra.wiki/Home.md &
+        yandex-browser-beta --variations-override-country=us --lang=en-US --new-window https://gemini.google.com /mnt/sdcard/github/algebra.wiki/Home.md &
         code /mnt/sdcard/github/algebra &
         ;;
     3)
