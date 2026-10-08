@@ -1,24 +1,31 @@
 #!/usr/bin/env -S bash -i
+~/.bashrc.d/dirs.sh
 
 YANDEX_PROFILE=~/.config/yandex-browser-beta/Default
 YANDEX_BIN=yandex-browser-beta
 CHROME_PROFILE=~/.config/google-chrome/Default/
 CHROME_BIN=google-chrome
 CLOUD_DIR=$(echo exit | cloud.sh 2)
-~/.bashrc.d/dirs.sh
 
-echo "Choose discipline:"
-echo "1. Algebra"
-echo "2. Algebra lab"
-echo "3. Geometry"
-echo "4. Geometry lab"
-echo "5. Probability"
-echo "6. Probability lab"
-echo "7. Physics"
-echo "8. Physics lab"
-echo "21. ACE (Associate Cloud Engineer)"
+MENU="
+Choose discipline:
+1. Algebra
+2. Algebra lab
+3. Geometry
+4. Geometry lab
+5. Probability
+6. Probability lab
+7. Physics
+8. Physics lab
+21. ACE (Associate Cloud Engineer)
+"
 
-read -p "Enter the number of your choice: " choice
+if [ -z "$1" ]; then
+    echo "$MENU"
+    read -p "Enter the number of your choice: " choice
+else
+    choice=$1
+fi
 
 case $choice in
     1)
