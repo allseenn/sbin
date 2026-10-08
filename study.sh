@@ -45,6 +45,7 @@ case $choice in
     4)
         xdg-open $CLOUD_DIR/Геометрия/07-09.pdf
         geometry && code .
+        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     5)
         xdg-open $CLOUD_DIR/TерВер/07-09_1.pdf
