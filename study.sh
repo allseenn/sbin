@@ -1,7 +1,7 @@
 #!/usr/bin/env -S bash -i
 ~/.bashrc.d/dirs.sh
 
-YANDEX_PROFILE=~/.config/yandex-browser-beta/Default
+YANDEX_PROFILE=~/.config/yandex-browser-beta/Default/
 YANDEX_BIN=yandex-browser-beta
 CHROME_PROFILE=~/.config/google-chrome/Default/
 CHROME_BIN=google-chrome
@@ -45,6 +45,7 @@ case $choice in
     4)
         xdg-open $CLOUD_DIR/Геометрия/07-09.pdf
         geometry && code .
+        rm -f $YANDEX_PROFILE/Sessions/*
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     5)
