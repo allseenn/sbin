@@ -81,11 +81,11 @@ case $choice in
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     11)
-        xdg-open $CLOUD_DIR/География/07.pdf
+        xdg-open $CLOUD_DIR/География/06.pdf
         geography.wiki && code .
         ;;
     12)
-        xdg-open $CLOUD_DIR/География/07.pdf
+        xdg-open $CLOUD_DIR/География/06.pdf
         geography && code .
         rm -f $YANDEX_PROFILE/Sessions/*
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
