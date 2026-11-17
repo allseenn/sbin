@@ -17,6 +17,8 @@ Choose discipline:
 6. Probability lab
 7. Physics
 8. Physics lab
+9. Biology
+0. Biology lab
 21. ACE (Associate Cloud Engineer)
 "
 
@@ -49,11 +51,11 @@ case $choice in
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
     5)
-        xdg-open $CLOUD_DIR/TерВер/07-09_1.pdf
+        xdg-open $CLOUD_DIR/ТерВер/07-09_1.pdf
         probability.wiki && code .
         ;;
     6)
-        xdg-open $CLOUD_DIR/TерВер/07-09_1.pdf
+        xdg-open $CLOUD_DIR/ТерВер/07-09_1.pdf
         probability && code .
         rm -f $YANDEX_PROFILE/Sessions/*
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
@@ -65,6 +67,16 @@ case $choice in
     8)
         xdg-open $CLOUD_DIR/Физика/07.pdf
         physics && code .
+        rm -f $YANDEX_PROFILE/Sessions/*
+        $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
+        ;;
+    9)
+        xdg-open $CLOUD_DIR/Биология/06.pdf
+        biology.wiki && code .
+        ;;
+    0)
+        xdg-open $CLOUD_DIR/Биология/06.pdf
+        biology && code .
         rm -f $YANDEX_PROFILE/Sessions/*
         $YANDEX_BIN --variations-override-country=us --lang=en-US --new-window https://gemini.google.com $PWD.wiki/Home.md &
         ;;
