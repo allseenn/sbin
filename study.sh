@@ -19,6 +19,8 @@ Choose discipline:
 8. Physics lab
 9. Biology
 0. Biology lab
+11. Geography
+12. Geography lab
 21. ACE (Associate Cloud Engineer)
 "
 
