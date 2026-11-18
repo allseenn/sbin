@@ -18,7 +18,7 @@ Choose discipline:
 7. Physics
 8. Physics lab
 9. Biology
-0. Biology lab
+10. Biology lab
 11. Geography
 12. Geography lab
 21. ACE (Associate Cloud Engineer)
@@ -76,7 +76,7 @@ case $choice in
         xdg-open $CLOUD_DIR/Биология/06.pdf
         biology.wiki && code .
         ;;
-    0)
+    10)
         xdg-open $CLOUD_DIR/Биология/06.pdf
         biology && code .
         rm -f $YANDEX_PROFILE/Sessions/*
