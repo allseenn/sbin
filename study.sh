@@ -1,6 +1,6 @@
 #!/usr/bin/env -S bash -i
+# set -euox pipefail
 ~/.bashrc.d/dirs.sh
-
 YANDEX_PROFILE=~/.config/yandex-browser-beta/Default/
 YANDEX_BIN=yandex-browser-beta
 CHROME_PROFILE=~/.config/google-chrome/Default/
@@ -22,6 +22,8 @@ Choose discipline:
 11. Geography
 12. Geography lab
 21. ACE (Associate Cloud Engineer)
+31. Browser USE
+32. Browser USE lab
 "
 
 if [ -z "$1" ]; then
@@ -94,9 +96,21 @@ case $choice in
         ;;
     21)
         ## ACE (Associate Cloud Engineer)
-        ace.wiki &&git pull && code .
+        ace.wiki && git pull && code .
         rm -f $CHROME_PROFILE/Sessions/*
         $CHROME_BIN --variations-override-country=us --lang=en-US --new-window https://skills.google $PWD/home.md &
+        ;;
+    31)
+        ## Browser USE
+        browser.wiki && git pull && code .
+        rm -f $CHROME_PROFILE/Sessions/*
+        $CHROME_BIN --variations-override-country=us --lang=en-US --new-window https://docs.browser-use.com/open-source/introduction $PWD/home.md &
+        ;;
+    32)
+        ## Browser USE LAB
+        browser && git pull && code .
+        rm -f $CHROME_PROFILE/Sessions/*
+        $CHROME_BIN --variations-override-country=us --lang=en-US --new-window https://docs.browser-use.com/open-source/introduction $PWD.wiki/home.md &
         ;;
     *)
         echo "Invalid choice. Please run the script again and select a valid option."

@@ -94,3 +94,7 @@ alias biology.wiki='cd /mnt/sdcard/github/biology.wiki' # переходим в 
 alias biology.wiki='cd /mnt/sdcard/github/biology.wiki' # переходим в папку biology.wiki
 alias geography='cd /mnt/sdcard/github/geography' # переходим в папку geography
 alias geography.wiki='cd /mnt/sdcard/github/geography.wiki' # переходим в папку geography.wiki
+alias browser='cd /mnt/sdcard/github/browser' # переходим в папку browser
+alias browser='cd /mnt/sdcard/gitlab/aagent/browser' # переходим в папку browser
+alias browser.wiki='cd /mnt/sdcard/github/browser.wiki' # переходим в папку browser.wiki
+alias browser.wiki='cd /mnt/sdcard/gitlab/aagent/browser.wiki' # переходим в папку browser.wiki
